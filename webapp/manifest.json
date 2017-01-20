@@ -56,17 +56,24 @@
 				"async": true
 			},
 			"routes": [{
-				"name": "home",
+				"name": "",
 				"pattern": " ",
-				"titleTarget":[ "home"],
-				"greedy": false
+				"target": ["master", "detail"]
 			}],
 			"targets": {
-				"home": {
+				"detail": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
-					"viewName": "Home"
+					"viewName": "Detail",
+					"controlAggregation": "detailPages"
+				},
+				"master": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Master",
+					"controlAggregation": "masterPages"
 				}
 			}
 		},
