@@ -39,7 +39,7 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": ["sap_belize", "sap_hcb"]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -51,22 +51,28 @@
 				"routerClass": "sap.m.routing.Router",
 				"controlId": "rootControl",
 				"controlAggregation": "pages",
-				"viewPath": "ch81fullscreen.view.view",
+				"viewPath": "ch81fullscreen.view",
 				"viewType": "XML",
 				"async": true
 			},
 			"routes": [{
 				"name": "home",
-				"pattern": " ",
-				"titleTarget":[ "home"],
-				"greedy": false
+				"pattern": "",
+				"target": ["home"]
+			}, {
+				"name": "salesOrder",
+				"pattern": "SalesOrder/{SalesOrderID}",
+				"target": ["SalesOrder"]
 			}],
 			"targets": {
 				"home": {
+					"viewName": "Worklist"
+				},
+				"SalesOrder": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearAggregation": true,
-					"viewName": "Home"
+					"viewName": "SalesOrder"
 				}
 			}
 		},

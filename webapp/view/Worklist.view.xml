@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:semantic="sap.m.semantic" controllerName="ch81fullscreen.controller.Main">
+	<semantic:FullscreenPage title="Full Screen">
+		<semantic:content>
+			<Table id="table" class="sapUiResponsiveMargin" width="auto" items="{ path :'/SalesOrderSet' }" updateFinished="onTableUpdateFinished" growing="true" growingThreshold="4"
+		growingScrollToLoad="false">
+				<headerToolbar>
+					<Toolbar>
+						<Title id="title"/>
+						<ToolbarSpacer/>
+						<SearchField width="auto" liveChange="onChange"/>
+						<OverflowToolbarButton icon="sap-icon://filter"/>
+						<OverflowToolbarButton icon="sap-icon://sort"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+						xmlns:semantic="sap.m.semantic" id="__column3">
+						<header>
+							<Text text="Order Id" id="__text11"/>
+						</header>
+					</Column>
+					<Column>
+						<Text text="Customer"/>
+					</Column>
+					<Column>
+						<Text text="NetAmount"/>
+					</Column>
+					<Column/>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+								xmlns:semantic="sap.m.semantic" text="{SalesOrderID}" id="__text12_copy"/>
+							<Link text="{CustomerName}"/>
+							<Text text="{NetAmount}"/>
+							<Button text="Create Incoive" press="onItemPress"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	</semantic:FullscreenPage>
+</mvc:View>
